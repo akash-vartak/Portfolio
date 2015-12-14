@@ -3,23 +3,25 @@ include_once 'dbconnect.php';
 
 if(isset($_POST['btn-send-msg']))
 {
- $asdname = mysql_real_escape_string($_POST['fullname']);
- $asdemail = mysql_real_escape_string($_POST['fullemail']);
- $asdphonenumber = mysql_real_escape_string($_POST['fullphone']);
- $asdmessage = mysql_real_escape_string($_POST['fullmsg']);
+    $asdname = mysql_real_escape_string($_POST['fullname']);
+    $asdemail = mysql_real_escape_string($_POST['fullemail']);
+    $asdphonenumber = mysql_real_escape_string($_POST['fullphone']);
+    $asdmessage = mysql_real_escape_string($_POST['fullmsg']);
  
- if(mysql_query("INSERT INTO mywebsitefeedback VALUES('$asdname', '$asdemail', '$asdphonenumber', '$asdmessage')"))
- {
-  ?>
-        <script>alert('Message successfully sent ');</script>
-        <?php
- }
- else
- {
-  ?>
-        <script>alert('error while sending message...');</script>
-        <?php
- }
+    if(mysql_query("INSERT INTO mywebsitefeedback VALUES('$asdname', '$asdemail', '$asdphonenumber', '$asdmessage')"))
+    {
+    ?>
+            <script>alert('Message successfully sent ');</script>
+    <?php
+            header("Location: index.html");
+    }
+    else
+    {
+    ?>
+            <script>alert('error while sending message...');</script>
+    <?php
+            header("Location: projects.html");
+    }
 }
 ?>
 
@@ -89,7 +91,7 @@ if(isset($_POST['btn-send-msg']))
                     <div class="page-heading">
                         <h1 style="color:grey" class="animated swing">Contact Me</h1>
                         <hr class="small">
-                        <span class="subheading" style="color:black">Have questions? I have answers (maybe).</span>
+                        <span class="subheading" style="color:black">Have questions? I may have answers.</span>
                     </div>
                 </div>
             </div>
@@ -97,6 +99,9 @@ if(isset($_POST['btn-send-msg']))
     </header>
 
     <div class="container">
+        <video autoplay loop id="bgvid"> 
+                <source src="Clean%20Future%20-%20HD%20Motion%20Graphics%20Background%20Loop.mp4" type="video/mp4">
+            </video>
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <p>Want to get in touch with me? Fill out the form below to send me a message and I will try to get back to you ASAP!</p>
@@ -105,28 +110,28 @@ if(isset($_POST['btn-send-msg']))
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
                             <label>Name</label>
-                            <input name="fullname" type="text" class="form-control" placeholder="Name" id="name" required data-validation-required-message="Please enter your name.">
+                            <input style="color:black;" name="fullname" type="text" class="form-control" placeholder="Name" id="name" required data-validation-required-message="Please enter your name.">
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
                             <label>Email Address</label>
-                            <input name="fullemail" type="email" class="form-control" placeholder="Email Address" id="email" required data-validation-required-message="Please enter your email address.">
+                            <input style="color:black;" name="fullemail" type="email" class="form-control" placeholder="Email Address" id="email" required data-validation-required-message="Please enter your email address.">
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
                             <label>Phone Number</label>
-                            <input name="fullphone" type="tel" class="form-control" placeholder="Phone Number" id="phone" required data-validation-required-message="Please enter your phone number.">
+                            <input style="color:black;" name="fullphone" type="tel" class="form-control" placeholder="Phone Number" id="phone" required data-validation-required-message="Please enter your phone number.">
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
                             <label>Message</label>
-                            <textarea name="fullmsg" rows="5" class="form-control" placeholder="Message" id="message" required data-validation-required-message="Please enter a message."></textarea>
+                            <textarea style="color:black;" name="fullmsg" rows="5" class="form-control" placeholder="Message" id="message" required data-validation-required-message="Please enter a message."></textarea>
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
