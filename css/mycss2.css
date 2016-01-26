@@ -1,0 +1,17 @@
+#iconsa {
+    /* Firefox */
+    -moz-transition: all 0.7s ease;
+    /* WebKit */
+    -webkit-transition: all 0.7s ease;
+    /* Opera */
+    -o-transition: all 0.7s ease;
+    /* Standard */
+    transition: all 0.7s ease;
+}
+
+#iconsa:hover{
+  -webkit-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  transform: scale(1.5);
+}
